@@ -1,4 +1,5 @@
 # PlateGuard 🚗
+Version: 1.0
 
 <<<<<<< HEAD
 PlateGuard is a Python-based vehicle number plate validation and OCR detection tool that allows users to validate Indian vehicle registration numbers either by entering the number manually or by providing an image path for OCR-based extraction.
@@ -148,6 +149,8 @@ Program menu:
 
 ---
 
+## Screenshots
+
 ## Example Usage
 
 ### Text Input
@@ -253,15 +256,3 @@ Cybersecurity & Python Project Developer
 
 MIT License
 =======
-## Project Structure
-
-```text
-PlateGuard/
-│
-├── detect.py
-├── README.md
-├── .gitignore
-└── images/
-
----
->>>>>>> 055f0fd5a5e73abbfa060bad1011702e03d22e0a

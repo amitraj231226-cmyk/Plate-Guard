@@ -1,6 +1,13 @@
 import cv2
 import pytesseract
 import re
+print("""
+██████╗ ██╗      █████╗ ████████╗███████╗ ██████╗ ██╗   ██╗ █████╗ ██████╗
+██╔══██╗██║     ██╔══██╗╚══██╔══╝██╔════╝██╔════╝ ██║   ██║██╔══██╗██╔══██╗
+██████╔╝██║     ███████║   ██║   █████╗  ██║  ███╗██║   ██║███████║██████╔╝
+██╔═══╝ ██║     ██╔══██║   ██║   ██╔══╝  ██║   ██║██║   ██║██╔══██║██╔══██╗
+██║     ███████╗██║  ██║   ██║   ███████╗╚██████╔╝╚██████╔╝██║  ██║██║  ██║
+""")
 rto_data = {
     "UP11": "Saharanpur",
     "UP12": "Muzaffarnagar",
@@ -85,7 +92,7 @@ state_codes = {
     "MP": "Madhya Pradesh"
 }
 
-from plateguard_dashboard import save_scan, show_dashboard
+from plateguard_dashboard import save_scan, show_dashboard, clear_history
 
 pytesseract.pytesseract.tesseract_cmd = r'E:\Tesseract OCR\tesseract.exe'
 
@@ -126,7 +133,8 @@ def validate_plate(plate):
 
     else:
         print(f"\nPlate Detected: {cleaned}")
-        print("Status: Invalid / Suspicious Plate")
+        print("Status: Invalid Plate Format")
+        print("Expected Format: XX00XX0000")
         
         save_scan(cleaned, "Invalid")
 
@@ -152,12 +160,17 @@ def text_mode():
     validate_plate(plate)
 
 
-print("===== PlateGuard =====")
-print("1. Enter Vehicle Number")
-print("2. Upload Image Path")
+print("\n" + "="*40)
+print("        PLATEGUARD DASHBOARD")
+print("="*40)
+print("1. Validate Vehicle Number")
+print("2. Scan Plate From Image")
 print("3. View Scan History")
+print("4. Clear Scan History")
+print("5. Exit")
+print("="*40)
 
-choice = input("Choose option (1/2/3): ")
+choice = input("Choose option (1-5): ")
 
 if choice == "1":
     text_mode()
@@ -165,5 +178,9 @@ elif choice == "2":
     image_mode()
 elif choice == "3":
     show_dashboard()
+elif choice == "4":
+    clear_history()
+elif choice == "5":
+    print("Exiting PlateGuard...")
 else:
     print("Invalid choice")

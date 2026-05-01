@@ -38,3 +38,8 @@ def show_dashboard():
 
     for i, scan in enumerate(history, 1):
         print(f"{i}. [{scan['timestamp']}] {scan['plate']} | {scan['status']} | {scan['district']}, {scan['state']}")
+
+def clear_history():
+    with open("scan_history.json", "w") as f:
+        f.write("[]")
+    print("Scan history cleared.")
