@@ -84,9 +84,20 @@ M123AB456
 PlateGuard/
 │
 ├── detect.py
+├── plateguard_dashboard.py
+├── scan_history.json
 ├── README.md
 ├── .gitignore
-└── images/
+│
+├── images/
+│   └── sample_car.jpg
+│
+├── screenshots/
+│   ├── menu.png
+│   ├── valid_scan.png
+│   └── history.png
+│
+└── venv/
 ```
 
 ---
