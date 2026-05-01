@@ -1,18 +1,65 @@
 # PlateGuard 🚗
 
+<<<<<<< HEAD
 PlateGuard is a Python-based vehicle number plate validation and OCR detection tool that allows users to validate Indian vehicle registration numbers either by entering the number manually or by providing an image path for OCR-based extraction.
 
 This project was built for learning computer vision, OCR integration, regex-based validation, and practical Python project development.
+=======
+PlateGuard is a Python-based vehicle number plate validation and OCR detection tool.
+
+It allows users to:
+
+- Validate vehicle numbers through manual text input
+- Extract number plate text from vehicle images
+- Verify Indian number plate format
+- Detect suspicious / invalid plate formats
+>>>>>>> 055f0fd5a5e73abbfa060bad1011702e03d22e0a
 
 ---
 
 ## Features
 
+<<<<<<< HEAD
 - Manual vehicle number validation
 - OCR-based number plate detection from images
 - Indian number plate format verification
 - Suspicious / invalid plate detection
 - User input-based interactive CLI tool
+=======
+### Text Input Validation
+Users can directly enter a vehicle registration number.
+
+Example:
+
+MH12AB3456
+
+The tool checks whether it follows the standard Indian registration format.
+
+---
+
+### Image-Based Detection
+Users can provide an image path.
+
+PlateGuard uses OCR to extract text from the number plate.
+
+---
+
+### Format Validation
+Checks if the plate matches the Indian vehicle registration pattern.
+
+Valid format example:
+
+MH12AB3456
+
+---
+
+### Suspicious Plate Detection
+Flags plates with invalid formatting.
+
+Example:
+
+M123AB456
+>>>>>>> 055f0fd5a5e73abbfa060bad1011702e03d22e0a
 
 ---
 
@@ -22,6 +69,7 @@ This project was built for learning computer vision, OCR integration, regex-base
 - OpenCV
 - Pytesseract OCR
 - Regex Validation
+<<<<<<< HEAD
 
 ---
 
@@ -37,9 +85,12 @@ PlateGuard/
 ```
 
 ---
+=======
+>>>>>>> 055f0fd5a5e73abbfa060bad1011702e03d22e0a
 
-## Installation
+---
 
+<<<<<<< HEAD
 ### Clone Repository
 
 ```bash
@@ -201,3 +252,16 @@ Cybersecurity & Python Project Developer
 ## License
 
 MIT License
+=======
+## Project Structure
+
+```text
+PlateGuard/
+│
+├── detect.py
+├── README.md
+├── .gitignore
+└── images/
+
+---
+>>>>>>> 055f0fd5a5e73abbfa060bad1011702e03d22e0a
