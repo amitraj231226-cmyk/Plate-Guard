@@ -85,6 +85,8 @@ state_codes = {
     "MP": "Madhya Pradesh"
 }
 
+from plateguard_dashboard import save_scan, show_dashboard
+
 pytesseract.pytesseract.tesseract_cmd = r'E:\Tesseract OCR\tesseract.exe'
 
 pattern = r'^[A-Z]{2}[0-9]{2}[A-Z]{2}[0-9]{4}$'
@@ -98,6 +100,13 @@ def validate_plate(plate):
         rto = cleaned[:4]
         series = cleaned[4:6]
         number = cleaned[6:]
+
+        save_scan(
+            cleaned,
+            "Valid",
+            state_codes.get(state, "Unknown"),
+            rto_data.get(rto, "Unknown")
+        )
 
         print(f"\nPlate Detected: {cleaned}")
         print("Status: Valid Indian Number Plate")
@@ -118,6 +127,8 @@ def validate_plate(plate):
     else:
         print(f"\nPlate Detected: {cleaned}")
         print("Status: Invalid / Suspicious Plate")
+        
+        save_scan(cleaned, "Invalid")
 
 
 def image_mode():
@@ -144,12 +155,15 @@ def text_mode():
 print("===== PlateGuard =====")
 print("1. Enter Vehicle Number")
 print("2. Upload Image Path")
+print("3. View Scan History")
 
-choice = input("Choose option (1/2): ")
+choice = input("Choose option (1/2/3): ")
 
 if choice == "1":
     text_mode()
 elif choice == "2":
     image_mode()
+elif choice == "3":
+    show_dashboard()
 else:
     print("Invalid choice")
