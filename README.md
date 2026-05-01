@@ -1,4 +1,8 @@
 # PlateGuard 🚗
+
+## PlateGuard v1.0
+A Python-based Indian vehicle number plate validation and OCR detection system.
+
 Version: 1.0
 
 <<<<<<< HEAD
