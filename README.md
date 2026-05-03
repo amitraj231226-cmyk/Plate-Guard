@@ -123,7 +123,7 @@ python -m venv venv
 ### Activate Environment (Windows)
 
 ```bash
-venv\Scripts\activate
+source venv\bin\activate
 ```
 
 ### Install Dependencies
